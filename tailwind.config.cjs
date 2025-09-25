@@ -11,4 +11,11 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
+  layer: {
+    utilities: {
+      '.link': {
+        '@apply relative': {}
+      }
+    }
+  }
 }

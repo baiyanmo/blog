@@ -3,7 +3,7 @@ import type {
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
-	SiteConfig
+	SiteConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
@@ -33,18 +33,18 @@ export const siteConfig: SiteConfig = {
 		{
 			src: "/favicon/favicon16.png",
 			sizes: "16x16",
-			theme: "light"
+			theme: "light",
 		},
 		{
 			src: "/favicon/favicon32.png",
 			sizes: "32x32",
-			theme: "light"
+			theme: "light",
 		},
 		{
 			src: "/favicon/favicon64.png",
 			sizes: "64x64",
-			theme: "light"
-		}
+			theme: "light",
+		},
 	],
 };
 
