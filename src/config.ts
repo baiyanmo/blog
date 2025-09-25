@@ -3,7 +3,7 @@ import type {
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
-	SiteConfig,
+	SiteConfig
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
@@ -30,19 +30,21 @@ export const siteConfig: SiteConfig = {
 		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
 	},
 	favicon: [
-		// Different sizes for different devices
 		{
-			src: "favicon/favicon16.png", // For small icons (e.g. mobile bookmarks)
+			src: "/favicon/favicon16.png",
 			sizes: "16x16",
+			theme: "light"
 		},
 		{
-			src: "favicon/favicon32.png", // Standard size for most devices
+			src: "/favicon/favicon32.png",
 			sizes: "32x32",
+			theme: "light"
 		},
 		{
-			src: "favicon/favicon64.png", // High-DPI displays
+			src: "/favicon/favicon64.png",
 			sizes: "64x64",
-		},
+			theme: "light"
+		}
 	],
 };
 
