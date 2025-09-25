@@ -31,6 +31,11 @@ export default defineConfig({
   site: "https://fuwari.vercel.app/",
   base: "/",
   trailingSlash: "always",
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/noop'
+    }
+  },
 
   integrations: [
       tailwind({
