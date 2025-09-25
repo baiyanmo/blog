@@ -32,15 +32,15 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Different sizes for different devices
 		{
-			src: "/favicon/favicon16.png", // For small icons (e.g. mobile bookmarks)
+			src: "favicon/favicon16.png", // For small icons (e.g. mobile bookmarks)
 			sizes: "16x16",
 		},
 		{
-			src: "/favicon/favicon32.png", // Standard size for most devices
+			src: "favicon/favicon32.png", // Standard size for most devices
 			sizes: "32x32",
 		},
 		{
-			src: "/favicon/favicon64.png", // High-DPI displays
+			src: "favicon/favicon64.png", // High-DPI displays
 			sizes: "64x64",
 		},
 	],
