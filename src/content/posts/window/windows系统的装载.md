@@ -4,6 +4,6 @@ published: 2025-09-27
 description: 'windows系统的安装'
 image: './window.jpg'
 tags: ["windows"]
-category: 'development tools'
+category: '开发工具(development tools)'
 draft: false 
 ---
