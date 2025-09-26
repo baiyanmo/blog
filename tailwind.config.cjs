@@ -15,6 +15,9 @@ module.exports = {
     utilities: {
       '.link': {
         '@apply relative': {}
+      },
+      '.btn-regular-dark': {
+        '@apply bg-gray-800 text-white hover:bg-gray-700': {}
       }
     }
   }
