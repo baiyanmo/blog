@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check",
-    "build": "astro build && pagefind --site dist",
+    "build": "pnpm clean && astro build && pagefind --site dist",
+    "clean": "rimraf .astro dist node_modules/.vite",
     "preview": "astro preview",
     "astro": "astro",
     "type-check": "tsc --noEmit --isolatedDeclarations",
@@ -71,6 +72,7 @@
     "@types/sanitize-html": "^2.16.0",
     "postcss-import": "^16.1.1",
     "postcss-nesting": "^13.0.2",
+    "rimraf": "^6.0.1",
     "sharp": "^0.34.4"
   },
   "packageManager": "pnpm@9.14.4"
