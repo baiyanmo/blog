@@ -2,7 +2,7 @@
 title: windows系统的装载
 published: 2025-09-27
 description: 'windows系统的安装'
-image: '/img/install-windows.png'
+image: './window.jpg'
 tags: ["windows"]
 category: '开发工具(development tools)'
 draft: false
@@ -20,22 +20,22 @@ win10的下载的地址为
 
 找到此选项
 
-![Windows系统安装选项](/img/setup/step1.png)
+![Windows系统安装选项](./1.png)
 
 下载完成后点击exe文件
 
-![exe文件](/img/setup/step2.png)
+![exe文件](./2.png)
 
-选择接受![选择接受](/img/setup/step3.png)
+选择接受![选择接受](./3.png)
 
 选择u盘为介质，iso为镜像文件一般下载在虚拟机中
 
-![选择介质](/img/setup/step4.png)
+![选择介质](./4.png)
 
 选择要下载的u盘
 
-![选择U盘](/img/setup/step5.png)
+![选择U盘](./5.png)
 
-![制作进度](/img/setup/step6.png)
+![制作进度](./6.png)
 
 待进度完成则系统u盘制作完成
