@@ -6,8 +6,6 @@ image: './window.jpg'
 tags: ["windows"]
 category: '开发工具(development tools)'
 draft: false
-setup: |
-  import { Image } from 'astro:assets'
 ---
 
 
@@ -31,22 +29,22 @@ win10的下载的地址为
 
 找到此选项
 
-![image-20250929211222162]({img1})
+![image-20250929211222162](/images/posts/windows/image-20250929211222162.png)
 
 下载完成后点击exe文件
 
-![image-20250929211329962]({img2})
+![image-20250929211329962](/images/posts/windows/image-20250929211329962.png)
 
-选择接受![image-20250929211355592]({img3})
+选择接受![image-20250929211355592](/images/posts/windows/image-20250929211355592.png)
 
 选择u盘为介质，iso为镜像文件一般下载在虚拟机中
 
-![image-20250929211530789]({img4})
+![image-20250929211530789](/images/posts/windows/image-20250929211530789.png)
 
 选择要下载的u盘
 
-![image-20250929211633755]({img5})
+![image-20250929211633755](/images/posts/windows/image-20250929211633755.png)
 
-![image-20250929211815367]({img6})
+![image-20250929211815367](/images/posts/windows/image-20250929211815367.png)
 
 待进度完成则系统u盘制作完成
