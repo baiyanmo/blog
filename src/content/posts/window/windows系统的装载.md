@@ -7,3 +7,14 @@ tags: ["windows"]
 category: '开发工具(development tools)'
 draft: false
 ---
+
+# windows系统的安装
+
+win11系统的下载网址为
+
+[下载 Windows 11](https://www.microsoft.com/zh-cn/software-download/windows11)
+
+win10的下载的地址为
+
+[下载 Windows 10](https://www.microsoft.com/zh-cn/software-download/windows10)
+
