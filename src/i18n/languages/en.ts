@@ -37,4 +37,3 @@ export const en: Translation = {
 		[Key.license]: 'License',
 	[Key.friends]: 'Friends'
 };
-};

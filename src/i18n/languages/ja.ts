@@ -37,4 +37,3 @@ export const ja: Translation = {
 		[Key.license]: 'ライセンス',
 	[Key.friends]: '友達リンク'
 };
-};

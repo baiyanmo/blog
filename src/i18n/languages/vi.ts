@@ -37,4 +37,3 @@ export const vi: Translation = {
 		[Key.license]: 'Giấy phép',
 	[Key.friends]: 'Bạn bè'
 };
-};

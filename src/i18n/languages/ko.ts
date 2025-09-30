@@ -37,4 +37,3 @@ export const ko: Translation = {
 		[Key.license]: '라이센스',
 	[Key.friends]: '친구 링크'
 };
-};

@@ -37,4 +37,3 @@ export const tr: Translation = {
 		[Key.license]: 'Lisans',
 	[Key.friends]: 'Arkadaşlar'
 };
-};

@@ -37,4 +37,3 @@ export const zh_TW: Translation = {
 		[Key.license]: '授權條款',
 	[Key.friends]: '友情鏈接'
 };
-};

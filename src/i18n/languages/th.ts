@@ -37,4 +37,3 @@ export const th: Translation = {
 		[Key.license]: 'ลิขสิทธิ์',
 	[Key.friends]: 'เพื่อน'
 };
-};
