@@ -32,13 +32,16 @@ const items: FriendItem[] = [
 ];
 ---
 
-<MainGridLayout title={i18n(I18nKey.friends)} description={i18n(I18nKey.friends)}>
-	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
-		<div class="card-base z-10 px-9 py-6 relative w-full">
-			<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 my-4" id="friends-list">
+<MainGridLayout
+	title={i18n(I18nKey.friends)}
+	description={i18n(I18nKey.friends)}
+>
+	<div class='flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32'>
+		<div class='card-base z-10 px-9 py-6 relative w-full'>
+			<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 my-4' id='friends-list'>
 				{items.map((item) => (
-					<div class="friend-card flex flex-nowrap items-stretch h-28 gap-4 rounded-[var(--radius-large)]">
-						<div class="w-28 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-zinc-200 dark:bg-zinc-900">
+					<div class='friend-card flex flex-nowrap items-stretch h-28 gap-4 rounded-[var(--radius-large)]'>
+						<div class='w-28 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-zinc-200 dark:bg-zinc-900'>
 							<img
 								src={item.imgurl}
 								alt="站点头像"
@@ -86,12 +89,12 @@ const items: FriendItem[] = [
 			const container = document.getElementById('friends-list');
 			if (!container) return;
 			const cards = Array.from(container.children);
-			// 洗牌算法
+			
 			for (let i = cards.length - 1; i > 0; i--) {
 				const j = Math.floor(Math.random() * (i + 1));
 				[cards[i], cards[j]] = [cards[j], cards[i]];
 			}
-			// 重新插入
+			
 			cards.forEach((card) => container.appendChild(card));
 		});
 	</script>
