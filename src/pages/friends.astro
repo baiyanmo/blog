@@ -11,8 +11,17 @@ if (!friendsPost) {
 	throw new Error('Friends page content not found');
 }
 
-const { Content } = await render(friendsPost);
-const items = [
+const { Content } = await friendsPost.render();
+
+interface FriendItem {
+	title: string;
+	imgurl: string;
+	desc: string;
+	siteurl: string;
+	tags: string[];
+}
+
+const items: FriendItem[] = [
   {
     title: 'Astro',
     imgurl: 'https://avatars.githubusercontent.com/u/44914786?s=48&v=4',
