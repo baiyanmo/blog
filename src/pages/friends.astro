@@ -1,14 +1,14 @@
 ---
-import { getEntry } from 'astro:content';
-import Markdown from '@components/misc/Markdown.astro';
-import I18nKey from '../i18n/i18nKey';
-import { i18n } from '../i18n/translation';
-import MainGridLayout from '../layouts/MainGridLayout.astro';
+import { getEntry } from "astro:content";
+import Markdown from "@components/misc/Markdown.astro";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
 
-const friendsPost = await getEntry('spec', 'friends');
+const friendsPost = await getEntry("spec", "friends");
 
 if (!friendsPost) {
-	throw new Error('Friends page content not found');
+	throw new Error("Friends page content not found");
 }
 
 const { Content } = await friendsPost.render();
@@ -23,12 +23,12 @@ interface FriendItem {
 
 const items: FriendItem[] = [
 	{
-		title: 'Mengh04',
-		imgurl: 'https://blog.mengh04.top/_astro/avatar.BodP7eFL_WJggf.webp',
-		desc: '学习Rust，帮助你写出更好的C++代码',
-		siteurl: 'https://blog.mengh04.top/',
-		tags: ['框架']
-	}
+		title: "Mengh04",
+		imgurl: "https://blog.mengh04.top/_astro/avatar.BodP7eFL_WJggf.webp",
+		desc: "学习Rust，帮助你写出更好的C++代码",
+		siteurl: "https://blog.mengh04.top/",
+		tags: ["框架"],
+	},
 ];
 ---
 
