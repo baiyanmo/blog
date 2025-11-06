@@ -446,3 +446,4 @@ https://www.bilibili.com/video/BV1qzbzzcEXa/?spm_id_from=333.337.search-card.all
 或者自行寻找皮肤
 
 #### 最后为对arch的自行配置可以安装 plasma-x11（kde）上手简易，或者niri，其中可自行配置
+
