@@ -19,7 +19,7 @@ lang: ''
 
 https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2025.10.01/
 
-![image-20251025235800922](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20251025235800922.png)
+![image-20251025235800922](/images/posts/linux0/image-20251025235800922.png)
 
 ---
 
@@ -27,7 +27,7 @@ https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2025.10.01/
 
 [Index of /ubuntu-releases/24.04/ | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04/)、
 
-![image-20251025235729107](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20251025235729107.png)
+![image-20251025235729107](/images/posts/linux0/image-20251025235729107.png)
 
 ---
 
@@ -407,7 +407,7 @@ vim /etc/sudoers
 
 进入sudo后加下列注释取消
 
-![image-20251107020915285](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20251107020915285.png)
+![image-20251107020915285](/images/posts/linux0/image-20251107020915285.png)
 
 ###### 为linux安装fdisk
 
@@ -421,9 +421,9 @@ pacman -S fdisk
 
 想要让 arub-mkcontig 探测其他已经安装的系统并目动把他们添加到启动菜单中，安装os-prober
 将windows系统所在的磁盘挂载到/mnt。然后重新运行 grub-mkconfig。如果你得到以下输出:
-Warning:os prober will not be executed to detect other bootable partitions，则编辑 /etc/default/grub 并取消下面这一行的注释![image-20251107021352471](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20251107021352471.png)
+Warning:os prober will not be executed to detect other bootable partitions，则编辑 /etc/default/grub 并取消下面这一行的注释![image-20251107021352471](/images/posts/linux0/image-20251107021352471.png)
 
-![image-20251107021421815](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20251107021421815.png)
+![image-20251107021421815](/images/posts/linux0/image-20251107021421815.png)
 
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
