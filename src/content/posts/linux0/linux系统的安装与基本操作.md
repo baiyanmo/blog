@@ -37,6 +37,10 @@ https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2025.10.01/
 
 制作关于Linux系统的uefi启动U盘，具体操作如视频
 
+## Bilibili
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113265787016244&bvid=BV1EG1yYkEqo&cid=26185369364&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
 ---
 
 ###### 系统的正式装载
