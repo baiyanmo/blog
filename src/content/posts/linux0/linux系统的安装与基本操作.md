@@ -11,7 +11,7 @@ lang: ''
 
 # linux 系统的安装
 
-#### 清华镜像源网址
+## 清华镜像源网址
 
 ###### 首先下载好想要的linux的对应镜像文件
 
@@ -59,7 +59,7 @@ https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97#%E9%87%8D
 
 ---
 
-#### 1.安装前的准备
+## 1.安装前的准备
 
 ###### 下载ultraiso制作镜像U盘
 
@@ -67,7 +67,7 @@ https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97#%E9%87%8D
 
 制作关于Linux系统的uefi启动U盘，具体操作如视频
 
-## Bilibili
+### Bilibili
 
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113265787016244&bvid=BV1EG1yYkEqo&cid=26185369364&p=1" 
         scrolling="no" 
@@ -182,7 +182,7 @@ ping www.baidu.com
 
 ---
 
-#### 2.开始安装系统
+## 2.开始安装系统
 
 **选择镜像站**
 
@@ -210,7 +210,7 @@ pacstrap -K /mnt base linux linux-firmware vim
 
 ---
 
-#### 3.配置系统
+## 3.配置系统
 
 ###### **生成 fstab 文件**
 
@@ -355,7 +355,7 @@ umount -R /mnt
 
 ---
 
-#### 4.重新启动系统
+## 4.重新启动系统
 
 输入
 
@@ -367,7 +367,7 @@ reboot
 
 ---
 
-#### 5.安装后的工作
+## 5.安装后的工作
 
 ###### 创建用户
 
