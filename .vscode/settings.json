@@ -76,7 +76,7 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "lua_analyzer.codeLinting.ignoreGlobal": ";Achievement;AICharacter;Animation;Archive;Array;Audio;Camera;Character;Chat;Creature;Currency;CustomItem;CustomProperty;Damage;Element;Engine;Events;FakeCharacter;FuncElement;Guide;Inventory;Log;LogicElement;MiscService;Music;Particle;PhysicsElement;PlayInteractive;PublicDB;Rank;Setting;Share;Shop;Skill;SkyBox;Social;Story;System;Task;Team;TimerManager;TriggerBox;UI;UMath;Voice",
+  "lua_analyzer.codeLinting.ignoreGlobal": ";Achievement;AICharacter;Animation;Archive;Array;Audio;Camera;Character;Chat;Creature;Currency;CustomItem;CustomProperty;Damage;Element;Engine;Events;FakeCharacter;FuncElement;Guide;Inventory;Log;LogicElement;MiscService;Music;Particle;PhysicsElement;PlayInteractive;PublicDB;Rank;Setting;Share;Shop;Skill;SkyBox;Social;Story;System;Task;Team;TimerManager;TriggerBox;UI;UMath;Voice;LighterCreature",
   "Lua.diagnostics.globals": [
     "Achievement",
     "AICharacter",
@@ -122,7 +122,8 @@
     "TriggerBox",
     "UI",
     "UMath",
-    "Voice"
+    "Voice",
+    "LighterCreature"
   ],
   "emmylua.workspace.library": [
     "c:/Users/86183/.vscode/extensions/dreamhelper.dream-helper-1.4.4/res/lib"

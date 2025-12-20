@@ -1,6 +1,6 @@
 ---
-title: exe打包文件
-published: 2025-11-23
+title: 虚拟机安装mac系统
+published: 2025-11-10
 description: ''
 image: ''
 tags: []
@@ -203,6 +203,3 @@ binaries=[
 debug=True,                         # exe运行时会打印详细信息
 console=True,
 ```
-
-### 对于打包.NET文件
-dotnet publish UpperComputer.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
