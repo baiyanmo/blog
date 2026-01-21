@@ -5,6 +5,18 @@ import { url } from "../../utils/url-utils";
 import ImageWrapper from "../misc/ImageWrapper.astro";
 
 const config = profileConfig;
+
+// Map icon names to social network identifiers
+const getSocialType = (iconName: string) => {
+  if (iconName.includes('github')) return 'github';
+  if (iconName.includes('twitter')) return 'twitter';
+  if (iconName.includes('steam')) return 'steam';
+  if (iconName.includes('spotify')) return 'spotify';
+  if (iconName.includes('pinterest')) return 'pinterest';
+  if (iconName.includes('dribbble')) return 'dribbble';
+  if (iconName.includes('telegram')) return 'telegram';
+  return 'default';
+};
 ---
 <div class="card-base p-3">
     <a aria-label="Go to About Page" href={url('/about/')}
@@ -23,10 +35,21 @@ const config = profileConfig;
         <div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div>
         <div class="text-center text-neutral-400 mb-2.5 transition">{config.bio}</div>
         <div class="flex flex-wrap gap-2 justify-center mb-1">
-            {config.links.length > 1 && config.links.map(item =>
-                    <a rel="me" aria-label={item.name} href={item.url} target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90">
-                        <Icon name={item.icon} class="text-[1.5rem]"></Icon>
-                    </a>
+            {config.links.length > 1 && (
+                <ul class="example-2">
+                    {config.links.map((item) => {
+                        const socialType = getSocialType(item.icon);
+                        return (
+                            <li class="icon-content" data-social={socialType}>
+                                <a rel="me" aria-label={item.name} href={item.url} target="_blank" data-social={socialType}>
+                                    <div class="filled"></div>
+                                    <Icon name={item.icon}></Icon>
+                                </a>
+                                <div class="tooltip">{item.name}</div>
+                            </li>
+                        );
+                    })}
+                </ul>
             )}
             {config.links.length == 1 && <a rel="me" aria-label={config.links[0].name} href={config.links[0].url} target="_blank"
                                             class="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95">
@@ -36,4 +59,308 @@ const config = profileConfig;
         </div>
     </div>
 </div>
+
+<style>
+/* From Uiverse.io by fuad_5270 */ 
+/* From Uiverse.io by WAIOKYERE */
+ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+/* Base glassmorphism anchor */
+.icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.06)
+  );
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  transition: all 0.35s ease-in-out;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.18),
+    0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* GitHub glass border */
+.icon-content[data-social="github"] a {
+  border: 1px solid rgba(219, 96, 143, 0.6);
+  box-shadow:
+    inset 0 0 6px rgba(230, 151, 181, 0.4),
+    0 0 10px rgba(234, 76, 137, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Twitter glass border */
+.icon-content[data-social="twitter"] a {
+  border: 1px solid rgba(29, 161, 242, 0.6);
+  box-shadow:
+    inset 0 0 6px rgba(29, 161, 242, 0.4),
+    0 0 10px rgba(29, 161, 242, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Steam glass border */
+.icon-content[data-social="steam"] a {
+  border: 1px solid rgba(23, 26, 33, 0.6);
+  box-shadow:
+    inset 0 0 6px rgba(23, 26, 33, 0.4),
+    0 0 10px rgba(23, 26, 33, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Spotify glass border */
+.icon-content[data-social="spotify"] a {
+  border: 1px solid rgba(29, 185, 84, 0.6);
+  box-shadow:
+    inset 0 0 6px rgba(29, 185, 84, 0.4),
+    0 0 10px rgba(29, 185, 84, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Pinterest glass border */
+.icon-content[data-social="pinterest"] a {
+  border: 1px solid rgba(189, 8, 28, 0.6);
+  box-shadow:
+    inset 0 0 6px rgba(189, 8, 28, 0.4),
+    0 0 10px rgba(189, 8, 28, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Dribbble glass border */
+.icon-content[data-social="dribbble"] a {
+  border: 1px solid rgba(234, 76, 137, 0.6);
+  box-shadow:
+    inset 0 0 6px rgba(234, 76, 137, 0.4),
+    0 0 10px rgba(234, 76, 137, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Telegram glass border */
+.icon-content[data-social="telegram"] a {
+  border: 1px solid rgba(0, 136, 204, 0.6);
+  box-shadow:
+    inset 0 0 6px rgba(0, 136, 204, 0.4),
+    0 0 10px rgba(0, 136, 204, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Common shine sweep effect */
+.icon-content a::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: rotate(25deg) translateX(-100%);
+  transition: transform 0.8s ease;
+  z-index: 0;
+}
+
+.icon-content a:hover::before {
+  transform: rotate(25deg) translateX(100%);
+}
+
+.icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 50%);
+}
+.icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.icon-content a:hover {
+  color: white;
+}
+.icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.icon-content a:hover .filled {
+  height: 100%;
+}
+
+/* Gradient animation keyframes */
+@keyframes premiumGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Common fix for all icons */
+.icon-content a {
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-content a .filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 20%;
+}
+
+/* GitHub – pink premium gradient */
+.icon-content a[data-social="github"] .filled,
+.icon-content a[data-social="github"] ~ .tooltip {
+  background: linear-gradient(135deg, #4a0f2d, #7a1f4d, #db608f, #e697b5);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(219, 96, 143, 0.6);
+  box-shadow:
+    inset 0 0 12px rgba(230, 151, 181, 0.5),
+    0 0 24px rgba(234, 76, 137, 0.7);
+}
+
+/* Twitter – dark premium blue gradient */
+.icon-content a[data-social="twitter"] .filled,
+.icon-content a[data-social="twitter"] ~ .tooltip {
+  background: linear-gradient(135deg, #0a1929, #1565c0, #1da1f2, #0d2a44);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(29, 161, 242, 0.6);
+  box-shadow:
+    inset 0 0 12px rgba(29, 161, 242, 0.5),
+    0 0 24px rgba(29, 161, 242, 0.7);
+}
+
+/* Steam – dark premium gradient */
+.icon-content a[data-social="steam"] .filled,
+.icon-content a[data-social="steam"] ~ .tooltip {
+  background: linear-gradient(135deg, #bef9c8, #5ff56b, #0aa650, #0f1419);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(23, 26, 33, 0.6);
+  box-shadow:
+    inset 0 0 12px rgba(23, 26, 33, 0.5),
+    0 0 24px rgba(23, 26, 33, 0.7);
+}
+
+/* Spotify – dark premium green gradient */
+.icon-content a[data-social="spotify"] .filled,
+.icon-content a[data-social="spotify"] ~ .tooltip {
+  background: linear-gradient(135deg, #0f3d1f, #146b35, #1db954, #0d2916);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(29, 185, 84, 0.6);
+  box-shadow:
+    inset 0 0 12px rgba(29, 185, 84, 0.5),
+    0 0 24px rgba(29, 185, 84, 0.7);
+}
+
+/* Pinterest – dark premium red gradient */
+.icon-content a[data-social="pinterest"] .filled,
+.icon-content a[data-social="pinterest"] ~ .tooltip {
+  background: linear-gradient(135deg, #3d0a0f, #7a0f1c, #bd081c, #4a0b12);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(189, 8, 28, 0.6);
+  box-shadow:
+    inset 0 0 12px rgba(189, 8, 28, 0.5),
+    0 0 24px rgba(189, 8, 28, 0.7);
+}
+
+/* Dribbble – dark premium pink gradient */
+.icon-content a[data-social="dribbble"] .filled,
+.icon-content a[data-social="dribbble"] ~ .tooltip {
+  background: linear-gradient(135deg, #3a0f24, #7a1f4d, #ea4c89, #4a0f2d);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(234, 76, 137, 0.6);
+  box-shadow:
+    inset 0 0 12px rgba(234, 76, 137, 0.5),
+    0 0 24px rgba(234, 76, 137, 0.7);
+}
+
+/* Telegram – dark premium blue gradient */
+.icon-content a[data-social="telegram"] .filled,
+.icon-content a[data-social="telegram"] ~ .tooltip {
+  background: linear-gradient(135deg, #0a1f2d, #0f4a66, #0088cc, #0a2e44);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(0, 136, 204, 0.6);
+  box-shadow:
+    inset 0 0 12px rgba(0, 136, 204, 0.5),
+    0 0 24px rgba(0, 136, 204, 0.7);
+}
+</style>
 

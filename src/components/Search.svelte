@@ -139,15 +139,10 @@ $: if (initialized && keywordMobile) {
 </script>
 
 <!-- search bar for desktop view -->
-<div id="search-bar" class="hidden lg:flex transition-all items-center h-11 mr-2 rounded-lg
-      bg-black/[0.04] hover:bg-black/[0.06] focus-within:bg-black/[0.06]
-      dark:bg-white/5 dark:hover:bg-white/10 dark:focus-within:bg-white/10
-">
-    <Icon icon="material-symbols:search" class="absolute text-[1.25rem] pointer-events-none ml-3 transition my-auto text-black/30 dark:text-white/30"></Icon>
-    <input placeholder="{i18n(I18nKey.search)}" bind:value={keywordDesktop} on:focus={() => search(keywordDesktop, true)}
-           class="transition-all pl-10 text-sm bg-transparent outline-0
-         h-full w-40 active:w-60 focus:w-60 text-black/50 dark:text-white/50"
-    >
+<div id="search-bar" class="inputbox hidden lg:flex mr-2">
+    <input bind:value={keywordDesktop} on:focus={() => search(keywordDesktop, true)} required />
+    <span>{i18n(I18nKey.search)}</span>
+    <i></i>
 </div>
 
 <!-- toggle btn for phone/tablet view -->
@@ -161,15 +156,10 @@ $: if (initialized && keywordMobile) {
 top-20 left-4 md:left-[unset] right-4 shadow-2xl rounded-2xl p-2">
 
     <!-- search bar inside panel for phone/tablet -->
-    <div id="search-bar-inside" class="flex relative lg:hidden transition-all items-center h-11 rounded-xl
-      bg-black/[0.04] hover:bg-black/[0.06] focus-within:bg-black/[0.06]
-      dark:bg-white/5 dark:hover:bg-white/10 dark:focus-within:bg-white/10
-  ">
-        <Icon icon="material-symbols:search" class="absolute text-[1.25rem] pointer-events-none ml-3 transition my-auto text-black/30 dark:text-white/30"></Icon>
-        <input placeholder="Search" bind:value={keywordMobile}
-               class="pl-10 absolute inset-0 text-sm bg-transparent outline-0
-               focus:w-60 text-black/50 dark:text-white/50"
-        >
+    <div id="search-bar-inside" class="inputbox flex relative lg:hidden">
+        <input bind:value={keywordMobile} required />
+        <span>Search</span>
+        <i></i>
     </div>
 
     <!-- search results -->
@@ -188,9 +178,66 @@ top-20 left-4 md:left-[unset] right-4 shadow-2xl rounded-2xl p-2">
 </div>
 
 <style>
-  input:focus {
-    outline: 0;
+  .inputbox {
+    position: relative;
+    width: 196px;
   }
+
+  .inputbox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+  }
+
+  :global(.dark) .inputbox input {
+    color: #ffffff;
+  }
+
+  .inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+
+  .inputbox input:valid ~ span,
+  .inputbox input:focus ~ span {
+    color: #d0f354;
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0.75em;
+  }
+
+  .inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #e34ac7;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+  }
+
+  .inputbox input:valid ~ i,
+  .inputbox input:focus ~ i {
+    height: 44px;
+  }
+
   .search-panel {
     max-height: calc(100vh - 100px);
     overflow-y: auto;
