@@ -33,6 +33,12 @@ lang: ''
 
 ### pyinstaller --onefile --windowed --name "PDF转Word转换器" PDF转Word.pyw
 
+```
+pyinstaller --onefile --windowed --name "PDF转Word转换器" PDF转Word.pyw
+```
+
+
+
 - `--onefile`: 打包成单个exe文件
 
 - `--windowed`: 无控制台窗口(GUI程序)
@@ -92,6 +98,12 @@ exe = EXE(
     entitlements_file=None,
     icon='NONE',
 )```
+```
+
+###### 用spec文件进行打包
+
+```
+pyinstaller -y "盛路矩阵天线.spec"
 ```
 
 **spec文件完整配置详解:**
