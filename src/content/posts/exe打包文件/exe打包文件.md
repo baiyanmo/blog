@@ -33,6 +33,7 @@ lang: ''
 
 ### pyinstaller --onefile --windowed --name "PDF转Word转换器" PDF转Word.pyw
 
+##### 需要添加用到的库保证使用
 ```
 pyinstaller --onefile --windowed --name "PDF转Word转换器" PDF转Word.pyw
 ```
